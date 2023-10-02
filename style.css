@@ -1,0 +1,76 @@
+body {
+  font-family: sans-serif;
+  background-color: aquamarine;
+}
+
+.imagenes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.imagenes-container .imagenes {
+  position: relative;
+  margin-right: -20px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.imagenes-container .imagenes img {
+  width: 150px;
+  height: 150px;
+  transition: transform 0.32s ease;
+}
+
+.imagenes-container .imagenes .nombre {
+  position: absolute;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+  display: none;
+  min-width: 100px;
+  width: 150px;
+  top: -70px;
+  padding: 10px 15px;
+}
+
+.imagenes-container .imagenes .nombre .texto {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  width: 150px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.imagenes-container .imagenes:hover .nombre {
+  display: inline-block;
+  transform: translateY(-20px);
+}
+
+.imagenes-container .imagenes .nombre::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: 40%;
+  bottom: -20px;
+  border-top: solid 10px black;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+  border-bottom: solid 10px transparent;
+}
+
+.imagenes-container .imagenes:hover img {
+  transform: translateY(-20px);
+}
+
+@media (max-width: 680px) {
+  .imagenes-container {
+    flex-direction: column;
+    height: 150vh;
+  }
+}
